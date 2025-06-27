@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.scss";
-import Header from '@components/Header';
-import Footer from '@components/Footer';
+import Footer from "@components/Footer";
+import Header from "@components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,11 +26,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} bg-gray-50`}>
-        <div className="grid grid-rows-[auto_1fr_auto] min-h-screen w-full">
-          <Header />
-          <main className="w-full h-full">{children}</main>
-          <Footer />
+      <body className={`${geistSans.variable} ${geistMono.variable} h-screen max-h-screen overflow-hidden`}>
+        <div className="grid grid-rows-[50px_1fr_30px] h-screen max-h-screen overflow-hidden">
+          <header className="flex items-center justify-center">
+            <Header />
+          </header>
+          <div className="overflow-auto">
+            {children}
+          </div>
+          <footer
+            className="w-full h-full flex items-center justify-center text-sm text-gray-500"
+            tabIndex={0}
+            aria-label="Footer"
+          >
+            <Footer />
+          </footer>
         </div>
       </body>
     </html>

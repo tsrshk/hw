@@ -1,8 +1,10 @@
 "use client";
-const Footer = () => (
-  <footer className="w-full py-4 bg-white shadow flex justify-center items-center mt-auto">
-    <span className="text-gray-500 text-sm">&copy; {new Date().getFullYear()}</span>
-  </footer>
+import React from "react";
+
+const currentYear = new Date().getFullYear();
+
+const Footer: React.FC = () => (
+  <p>&copy; {currentYear}</p>
 );
 
 export default Footer; 
