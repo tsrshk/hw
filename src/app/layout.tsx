@@ -31,7 +31,7 @@ export default function RootLayout({
           <header className="flex items-center justify-center">
             <Header />
           </header>
-          <div className="overflow-auto">
+          <div className="overflow-auto bg-neutral-100">
             {children}
           </div>
           <footer
